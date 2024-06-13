@@ -30,7 +30,7 @@ export type Result<T = unknown> =
  */
 export async function parse<T = unknown>(
   input: Buffer | string,
-  options: Options
+  options: Options = {}
 ): Promise<Result<T>> {
   return new Promise<Result<T>>((resolve, reject) => {
     csvParse(input, options, (err, records, info) => {

@@ -25,6 +25,13 @@ if (result.success) {
 }
 ```
 
+## Browser
+
+```js
+const { parse } = await import("https://esm.sh/jsr/@jlarky/csv-parse");
+await parse("123,456", {})
+```
+
 ## Development
 
 To install dependencies:
