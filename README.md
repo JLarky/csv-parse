@@ -1,4 +1,5 @@
-# @jlarky/csv-parse
+# @jlarky/csv-parse [![JSR](https://jsr.io/badges/@jlarky/csv-parse)](https://jsr.io/@jlarky/csv-parse)
+
 
 ## Installation
 
@@ -28,8 +29,8 @@ if (result.success) {
 ## Browser
 
 ```js
-const { parse } = await import("https://esm.sh/jsr/@jlarky/csv-parse");
-await parse("123,456", {})
+const { parse } = await import("https://esm.sh/jsr/@jlarky/csv-parse@latest");
+await parse("123,456")
 ```
 
 ## Development

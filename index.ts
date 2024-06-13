@@ -5,11 +5,20 @@ import {
   type CastingContext,
 } from "csv-parse";
 
+/**
+ * Some info about the CSV parsing
+ */
 export type Info = Parser["info"];
+/**
+ * Error that occurred during parsing
+ */
 export type CsvError = CastingContext["error"];
-export type Result<T = unknown> =
+/**
+ * Result of parsing as a union type of success and failure
+ */
+export type Result<T = string[]> =
   | { success: false; err: CsvError; info: Info }
-  | { success: true; records: T; info: Info };
+  | { success: true; records: T[]; info: Info };
 
 /**
  * Wrapper around csv-parse to return a promise
@@ -28,7 +37,7 @@ export type Result<T = unknown> =
  *   console.error(result.err);
  * }
  */
-export async function parse<T = unknown>(
+export async function parse<T = string[]>(
   input: Buffer | string,
   options: Options = {}
 ): Promise<Result<T>> {

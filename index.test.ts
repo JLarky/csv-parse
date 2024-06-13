@@ -6,7 +6,7 @@ test("parsing", async () => {
   const input = "a,b,c\n1,2,3\n4,5,6";
   const options = { columns: true };
 
-  const result = await parse<{ a: string; b: string; c: string }[]>(
+  const result = await parse<{ a: string; b: string; c: string }>(
     input,
     options
   );
